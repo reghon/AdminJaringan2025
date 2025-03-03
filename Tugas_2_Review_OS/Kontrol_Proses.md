@@ -1,6 +1,6 @@
 ## ADMINISTRASI JARINGAN
 
-### PERTEMUAN 1 (REVIEW)
+### PERTEMUAN 2 (REVIEW OS)
 
 **Dosen Pengampu:**  
 Dr. Ferry Astika Saputra St, M.Sc
