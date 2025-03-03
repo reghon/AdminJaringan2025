@@ -1,3 +1,17 @@
+## ADMINISTRASI JARINGAN
+
+### PERTEMUAN 1 (REVIEW)
+
+**Dosen Pengampu:**  
+Dr. Ferry Astika Saputra St, M.Sc
+
+**Dibuat oleh:**  
+Muhammad Raihan Ghani  
+3123600027  
+Teknik Informatika D4 A  
+
+---
+
 # Kontrol Proses
 
 ## 1. Konsep Dasar Proses di Linux
