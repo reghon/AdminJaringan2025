@@ -45,7 +45,7 @@ Masuk ke direktori `/etc/bind`**,** pada folder ini kita akan mengkonfigurasi da
 1. **named.conf**
 
 ```bash
-sudo nano /etc/network/interfaces
+sudo nano /etc/bind/named.conf
 ```
 
 ![gambar.png](images/gambar%201.png)
@@ -55,7 +55,7 @@ tambahkan line `include "/etc/bind/named.conf.external-zones"` untuk menambahkan
 1. **named.conf.options**
 
 ```bash
-sudo nano /etc/network/interfaces
+sudo nano /etc/bind/named.conf.options
 ```
 
 ![gambar.png](images/gambar%202.png)
