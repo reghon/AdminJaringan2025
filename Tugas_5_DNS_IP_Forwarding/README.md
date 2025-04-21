@@ -96,7 +96,7 @@ Setelah itu semua kita konfigurasi , kita cek terlebih dahulu apakah konfigurasi
 named-checkzone [nama_zone] [file_konfigurasi_zone]
 ```
 
-![gambar.png](gambar%206.png)
+![gambar.png](images/gambar%206.png)
 
 Setelah semua sudah **OK,** restart **named.service** untuk menerapkan konfigurasi tersebut
 
@@ -112,7 +112,7 @@ Ubah nilai ip_forward menjadi 1 sehingga VM 1 dapat meneruskan IP
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
-![gambar.png](gambar%207.png)
+![gambar.png](images/gambar%207.png)
 
 Selanjutnya konfigurasi iptables
 
@@ -120,7 +120,7 @@ Selanjutnya konfigurasi iptables
 sudo iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE
 ```
 
-![gambar.png](gambar%208.png)
+![gambar.png](images/gambar%208.png)
 
 Perintah ini berfungsi untuk menambahkan tabel NAT pada **iptables** dan melakukan **MASQUERADE** ke ip yang diteruskan ke interface **enp0s3 yang** terhubung ke internet. Ini akan mentranslasikan ip private ke ip public. Selanjutnya eksekusi perintah berikut 
 
@@ -129,7 +129,7 @@ sudo iptables -A FORWARD -i enp0s8 -o enp0s3 -j ACCEPT
 sudo iptables -A FORWARD -i enp0s3 -o enp0s8 -j ACCEPT
 ```
 
-![gambar.png](gambar%209.png)
+![gambar.png](images/gambar%209.png)
 
 Perintah ini akan menambahkan rules untuk meneruskan ip dari interface **enp0s8** ke **enp0s3** dan sebaliknya agar VM2 bisa terhubung ke internet.
 
@@ -139,7 +139,7 @@ Simpan konfigurasi tersebut dengan menggunakan
 sudo iptables-save
 ```
 
-![gambar.png](gambar%2010.png)
+![gambar.png](images/gambar%2010.png)
 
 ---
 
@@ -147,19 +147,19 @@ sudo iptables-save
 
 Konfigurasikan IP STatic dari VM2 di halmaan setting address dengan address yang berada pada satu network dengan VM1 pada interface **enp0s8** yaitu **192.168.200.x**
 
-![gambar.png](gambar%2011.png)
+![gambar.png](images/gambar%2011.png)
 
 ## Testing
 
 ### Ping VM2 ke VM1 dan sebaliknya
 
-![gambar.png](gambar%2012.png)
+![gambar.png](images/gambar%2012.png)
 
-![gambar.png](gambar%2013.png)
+![gambar.png](images/gambar%2013.png)
 
 ### Cek Internet pada VM2
 
-![gambar.png](gambar%2014.png)
+![gambar.png](images/gambar%2014.png)
 
 ### Cek DNS VM1
 
@@ -167,16 +167,16 @@ Konfigurasikan IP STatic dari VM2 di halmaan setting address dengan address yang
 dig www.kelompok9.com
 ```
 
-![gambar.png](gambar%2015.png)
+![gambar.png](images/gambar%2015.png)
 
 ```bash
 dig -x 192.168.200.1
 ```
 
-![gambar.png](gambar%2016.png)
+![gambar.png](images/gambar%2016.png)
 
 ```bash
 nslookup www.kelompok9.com
 ```
 
-![gambar.png](gambar%2017.png)
+![gambar.png](images/gambar%2017.png)
